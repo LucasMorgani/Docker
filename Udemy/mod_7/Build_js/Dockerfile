@@ -37,7 +37,7 @@ EXPOSE 3000
 ARG VERSION             
 # Caso seja informado, criará uma variável ambiente no valor passado para o ARG
 # caso seja nulo, o valor atribuido será 1.0.0
-ENV VERSION=${VERSION:-1.0.0}
+ENV VERSION=${VERSION:-1.1.0}
 
 # Alterando para o usuário nodeapp
 USER nodeapp

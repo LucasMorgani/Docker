@@ -1,7 +1,6 @@
 import docker
 import datetime
 import requests
-from dotenv import load_dotenv
 
 
 # Unix sock version
