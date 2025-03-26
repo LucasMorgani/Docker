@@ -1,0 +1,31 @@
+# Docker compose - Flask _ PostgreSQL com comunicação entre containers
+
+services:
+
+  flaskapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flaskapp
+    ports:
+      - "8080:5000"
+    networks:
+      - public
+      - private
+
+  postgresdb:
+    image: postgres:17.4-alpine3.20
+    volumes:
+    - ./01-basegeografica.sql:/docker-entrypoint-initdb.d/01-basegeografica.sql
+    - ./02-basegeografica.sql:/docker-entrypoint-initdb.d/02-basegeografica.sql
+    environment:
+      POSTGRES_PASSWORD: "Postgres2025"
+    container_name: postgresdb
+    ports:
+      - "5432:5432"
+    networks:
+      - private
+
+networks:
+  public:
+  private:
