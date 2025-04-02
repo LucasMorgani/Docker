@@ -1,1 +1,0 @@
-Docker compose - Criar um ambiente WordPress + MySQL
